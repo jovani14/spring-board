@@ -1,5 +1,5 @@
 substitutions:
-  DEXCOM_MICRO_SVC_PROJECT_NAME: ajar-spring-board # default value
+  DEXCOM_MICRO_SVC_PROJECT_NAME: spring_board_ajar # default value
 images:
   - "gcr.io/$PROJECT_ID/${DEXCOM_MICRO_SVC_PROJECT_NAME}:$REVISION_ID"
 steps:
