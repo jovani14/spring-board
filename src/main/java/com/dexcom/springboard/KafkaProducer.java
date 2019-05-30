@@ -12,15 +12,19 @@ import java.util.Map;
 public class KafkaProducer {
 
     @Value("${kafka_cloud_config.bootstrap.servers:value not available}")
-    private String bootstrapServers;
+    private String bootstrap_servers;
+    @Value("${kafka_cloud_config.sasl.jaas.config:Not available}")
+    private String sasl_jaas_config;
+
+
 
     @GetMapping("/kafka-config")
     @ResponseBody
     public Map<String, String> kafkaconfig() {
         HashMap<String, String> map = new HashMap<>();
-        map.put("kafka_cloud_config.bootstrap.servers",bootstrapServers);
+        map.put("bootstrap.servers",bootstrap_servers);
+        map.put("sasl.jaas.config",sasl_jaas_config);
         return map;
     }
-
 
 }
