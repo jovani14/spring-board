@@ -29,8 +29,12 @@ public class KafkaProducerConfig {
 //        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
 //        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "io.confluent.kafka.serializers.KafkaJsonSerializer");
 
-        configProps.put("sasl.jaas.config",sasl_jaas_config);
-
+        configProps.put("ssl.endpoint.identification.algorithm", "https");
+        configProps.put("sasl.mechanism", "PLAIN");
+        configProps.put("request.timeout.ms", "20000");
+        configProps.put("retry.backoff.ms", "500");
+        configProps.put("security.protocol", "SASL_SSL");
+        configProps.put("sasl.jaas.config", sasl_jaas_config);
         configProps.put(
                 ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
                 bootstrap_servers);
