@@ -15,7 +15,7 @@ steps:
       - 'set'
       - 'image'
       - 'rs/${_DEXCOM_PROJECT_ID}-rs'
-      - '${_DEXCOM_PROJECT_ID}=gcr.io/$PROJECT_ID/${_DEXCOM_PROJECT_ID}:$REVISION_ID'
+      - 'spring-boot-container=gcr.io/$PROJECT_ID/${_DEXCOM_PROJECT_ID}:$REVISION_ID'
       - '--namespace=${_DEXCOM_NAMESPACE}'
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=europe-west3'
