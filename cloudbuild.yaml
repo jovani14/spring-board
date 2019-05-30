@@ -14,7 +14,7 @@ steps:
     args:
       - 'set'
       - 'image'
-      - 'deployment/${_DEXCOM_PROJECT_ID}-rs'
+      - 'rs/${_DEXCOM_PROJECT_ID}-rs'
       - '${_DEXCOM_PROJECT_ID}=gcr.io/$PROJECT_ID/${_DEXCOM_PROJECT_ID}:$REVISION_ID'
       - '--namespace=${_DEXCOM_NAMESPACE}'
     env:
