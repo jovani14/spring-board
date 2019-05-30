@@ -21,6 +21,8 @@ public class KafkaProducer<S, S1> {
     private String bootstrap_servers;
     @Value("${kafka_cloud_config.sasl.jaas.config:Not available}")
     private String sasl_jaas_config;
+    @Value("${myconfig.properties1:Not Found}")
+    private String properties1;
 
 
     @GetMapping("/kafka/config")
@@ -28,6 +30,7 @@ public class KafkaProducer<S, S1> {
     public Map<String, String> kafkaconfig() {
         HashMap<String, String> map = new HashMap<>();
         map.put("bootstrap.servers",bootstrap_servers);
+        map.put("properties1",properties1);
         return map;
     }
 
