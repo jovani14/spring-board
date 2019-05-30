@@ -16,5 +16,5 @@ steps:
       - 'deployment/${_DEXCOM_PROJECT_ID}-dep'
       - 'gcr.io/$PROJECT_ID/${_DEXCOM_PROJECT_ID}:$REVISION_ID'
     env:
-      - 'CLOUDSDK_COMPUTE_ZONE=europe-west3-b'
+      - 'CLOUDSDK_COMPUTE_ZONE=europe-west3'
       - 'CLOUDSDK_CONTAINER_CLUSTER=kubernetes-p8-integrations-eu-dev-2'
