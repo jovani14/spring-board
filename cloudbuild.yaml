@@ -1,5 +1,6 @@
 substitutions:
-  _DEXCOM_PROJECT_ID: ajar-spring-board # default value
+  _DEXCOM_PROJECT_ID: spring-ajar # default value
+  _DEXCOM_NAMESPACE: germany # default value
 images:
   - "gcr.io/$PROJECT_ID/${_DEXCOM_PROJECT_ID}:$REVISION_ID"
 steps:
@@ -13,8 +14,9 @@ steps:
     args:
       - 'set'
       - 'image'
-      - 'deployment/${_DEXCOM_PROJECT_ID}-dep'
+      - 'deployment/${_DEXCOM_PROJECT_ID}-rs'
       - '${_DEXCOM_PROJECT_ID}=gcr.io/$PROJECT_ID/${_DEXCOM_PROJECT_ID}:$REVISION_ID'
+      - '--namespace=${_DEXCOM_NAMESPACE}'
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=europe-west3'
       - 'CLOUDSDK_CONTAINER_CLUSTER=kubernetes-p8-integrations-eu-dev-2'

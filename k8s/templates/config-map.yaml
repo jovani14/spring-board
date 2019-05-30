@@ -9,4 +9,5 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  name: ajar-spring-board-cfg
+  name: ${KUBE_APP_NAME}-cfg
+  namespace: ${KUBE_NAMESPACE}

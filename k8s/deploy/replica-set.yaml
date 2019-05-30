@@ -1,37 +1,29 @@
 apiVersion: extensions/v1beta1
-kind: Deployment
+kind: ReplicaSet
 metadata:
   generation: 3
   labels:
-    app: ajar-spring-board-dep
-  name: ajar-spring-board-dep
-  namespace: default
+    app: spring-ajar-rs
+  name: spring-ajar-rs
+  namespace: germany
 spec:
-  progressDeadlineSeconds: 600
   replicas: 1
-  revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: ajar-spring-board-dep
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
+      app: spring-ajar-rs
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: ajar-spring-board-dep
+        app: spring-ajar-rs
     spec:
       containers:
-      - image: gcr.io/p8-integrations-eu-dev-2/ajar-spring-board:9753e5c0656cc176b0afdf502421937cebf783d0
+      - image: gcr.io/p8-integrations-eu-dev-2/spring-ajar:9753e5c0656cc176b0afdf502421937cebf783d0
         imagePullPolicy: IfNotPresent
-        name: ajar-spring-board
+        name: spring-boot
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}

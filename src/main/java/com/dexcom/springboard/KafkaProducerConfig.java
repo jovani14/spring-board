@@ -26,9 +26,6 @@ public class KafkaProducerConfig {
         Map<String, Object> configProps = new HashMap<>();
 
         configProps.put(ProducerConfig.ACKS_CONFIG, "all");
-//        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
-//        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "io.confluent.kafka.serializers.KafkaJsonSerializer");
-
         configProps.put("ssl.endpoint.identification.algorithm", "https");
         configProps.put("sasl.mechanism", "PLAIN");
         configProps.put("request.timeout.ms", "20000");
