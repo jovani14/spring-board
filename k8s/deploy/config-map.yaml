@@ -1,13 +1,15 @@
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: spring-ajar-cfg
+  namespace: germany
 data:
+  application.properties: |-
+    myconfig.properties1=Sandra
+    myconfig.properties2=Sergi
   application.yaml: "kafka_cloud_config:\r\n    ssl.endpoint.identification.algorithm:
     https\r\n    sasl.mechanism: PLAIN\r\n    request.timeout.ms: 20000\r\n    bootstrap.servers:
     pkc-l5w5g.europe-west3.gcp.confluent.cloud:9092\r\n    retry.backoff.ms: 500\r\n
     \   sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule
     required username\\=\"LIKDU2ITTTSFTFPP\" password\\=\"1Qk2A6AJ9aD3OMHYTFwJ96WvyX3ZnpnUvKwwVKqpKsWlkNWq7wV81YQ/JubNt+B2\";\r\n
     \   security.protocol: SASL_SSL\r\n"
-kind: ConfigMap
-metadata:
-  creationTimestamp: null
-  name: spring-ajar-cfg
-  namespace: germany
