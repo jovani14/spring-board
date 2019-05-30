@@ -8,11 +8,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Kafka Micro Svc</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Dexcom Kafka Microservices</a>
+    <a class="navbar-brand" href="#">Dexcom Kafka Microsvc</a>
 </nav>
 
 <main role="main">
@@ -20,10 +20,10 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
-            <h3 class="display-3">Application Info</h3>
+            <h3 class="display-9">Application Info</h3>
             <pre id="app-info"></pre>
             <hr/>
-            <h3 class="display-3">Health</h3>
+            <h3 class="display-9">Health</h3>
             <pre id="health-info"></pre>
             <hr/>
         </div>
@@ -47,6 +47,9 @@ $(document).ready(function() {
     $.ajax({
         url: "/actuator/info"
     }).then(function(data) {
+       if ( data.git ){
+        data.git.commit.time = new Date(data.git.commit.time).toString()
+       }
        $('#app-info').html(JSON.stringify(data, undefined, 2));
     });
     $.ajax({

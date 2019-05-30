@@ -1,3 +1,25 @@
+#Info endpoints
 info:
   company: Dexcom
   department: integrations
+
+# Management endpoints
+management:
+  endpoint:
+    restart:
+      enabled:  true
+
+spring:
+  application:
+    name: ajar-spring-board
+  cloud:
+    kubernetes:
+      config:
+        name: ajar-spring-board
+        namespace: default
+        sources:
+          - name: ajar-spring-board
+      reload:
+        enabled: true
+        mode: polling
+        period: 2000
