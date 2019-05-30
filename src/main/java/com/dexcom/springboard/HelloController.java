@@ -3,7 +3,6 @@ package com.dexcom.springboard;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,17 +27,8 @@ public class HelloController {
         return "redirect:/static/index.html";
     }
 
-    @Value("${kafka_cloud_config.bootstrap.servers:value not available}")
-    private String bootstrapServers;
 
 
-    @GetMapping("/kafka-config")
-    @ResponseBody
-    public Map<String, String> kafkaconfig() {
-        HashMap<String, String> map = new HashMap<>();
-        map.put("kafka_cloud_config.bootstrap.servers",bootstrapServers);
-        return map;
-    }
 }
 
 
