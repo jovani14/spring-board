@@ -11,16 +11,28 @@ management:
 
 spring:
   application:
-    name: eu-apps
+    name: spring-ajar
   cloud:
     kubernetes:
       config:
-        name: eu-apps
+        name: eu-kafka-config
         namespace: germany
-        sources:
-          - name: spring-ajar
       reload:
         enabled: true
         mode: polling
         period: 2000
+
+#Actuator endpoints
+endpoints:
+  cors:
+    allowed-origins: *
+  metrics:
+    enabled: true
+  configprops:
+    enabled: true
+  env:
+    enabled: true
+  beans:
+    enabled: true
+
 

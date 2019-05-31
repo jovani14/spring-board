@@ -14,7 +14,7 @@ export BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." >/dev/null 2>&1 
 #echo .
 
 export KUBE_NAMESPACE=germany
-export KUBE_CONFIG_GROUP=eu-apps
+export KUBE_CONFIG_NAME=eu-kafka-config
 export KUBE_APP_NAME=spring-ajar
 export KUBE_CLUSTER=kubernetes-p8-integrations-eu-dev-2
 export KUBE_REGION=europe-west3
@@ -47,18 +47,30 @@ management:
 
 spring:
   application:
-    name: ${KUBE_CONFIG_GROUP}
+    name: ${KUBE_APP_NAME}
   cloud:
     kubernetes:
       config:
-        name: ${KUBE_CONFIG_GROUP}
+        name: ${KUBE_CONFIG_NAME}
         namespace: ${KUBE_NAMESPACE}
-        sources:
-          - name: ${KUBE_APP_NAME}
       reload:
         enabled: true
         mode: polling
         period: 2000
+
+#Actuator endpoints
+endpoints:
+  cors:
+    allowed-origins: *
+  metrics:
+    enabled: true
+  configprops:
+    enabled: true
+  env:
+    enabled: true
+  beans:
+    enabled: true
+
 
 EOF
 
