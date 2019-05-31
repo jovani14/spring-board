@@ -47,7 +47,7 @@ management:
 
 spring:
   application:
-    name: ${KUBE_APP_NAME}
+    name: ${KUBE_CONFIG_GROUP}
   cloud:
     kubernetes:
       config:

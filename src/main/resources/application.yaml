@@ -11,7 +11,7 @@ management:
 
 spring:
   application:
-    name: spring-ajar
+    name: eu-apps
   cloud:
     kubernetes:
       config:
