@@ -11,14 +11,14 @@ management:
 
 spring:
   application:
-    name: ajar-spring-board
+    name: spring-ajar
   cloud:
     kubernetes:
       config:
-        name: ajar-spring-board
-        namespace: default
+        name: spring-ajar
+        namespace: germany
         sources:
-          - name: ajar-spring-board
+          - name: spring-ajar
       reload:
         enabled: true
         mode: polling

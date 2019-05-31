@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: spring-ajar-cfg
+  name: spring-ajar
   namespace: germany
 data:
   application.properties: |-

@@ -18,7 +18,7 @@ spec:
         app: spring-ajar-rs
     spec:
       containers:
-      - image: gcr.io/p8-integrations-eu-dev-2/spring-ajar:657d83938667855344e98071e30b582a383abd55
+      - image: gcr.io/p8-integrations-eu-dev-2/spring-ajar:latest
         imagePullPolicy: IfNotPresent
         name: spring-boot-container
         resources: {}

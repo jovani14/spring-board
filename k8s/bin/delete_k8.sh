@@ -16,15 +16,15 @@ export BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." >/dev/null 2>&1 
 pushd ${BASE_DIR}
 
 echo .
-echo Creating kubernetes objects
+echo Deleting kubernetes objects
 echo .
 
 
-kubectl apply -f ./k8s/deploy/namespace.yaml
-kubectl apply -f ./k8s/deploy/config-map.yaml
-kubectl apply -f ./k8s/deploy/role.yaml
-kubectl apply -f ./k8s/deploy/replica-set.yaml
-kubectl apply -f ./k8s/deploy/svc.yaml
+kubectl delete -f ./k8s/deploy/replica-set.yaml
+kubectl delete -f ./k8s/deploy/svc.yaml
+kubectl delete -f ./k8s/deploy/config-map.yaml
+kubectl delete -f ./k8s/deploy/role.yaml
+kubectl delete -f ./k8s/deploy/namespace.yaml
 
 popd
 
