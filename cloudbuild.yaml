@@ -1,6 +1,6 @@
 substitutions:
-  _DEXCOM_PROJECT_ID: spring-ajar # default value
-  _DEXCOM_NAMESPACE: germany # default value
+  _DEXCOM_PROJECT_ID: spring-ajar
+  _DEXCOM_NAMESPACE: germany
 images:
   - "gcr.io/$PROJECT_ID/${_DEXCOM_PROJECT_ID}:$REVISION_ID"
 steps:

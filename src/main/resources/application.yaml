@@ -1,7 +1,7 @@
 #Info endpoints
 info:
   company: Dexcom
-  department: integrations
+  project: integrations
 
 # Management endpoints
 management:
@@ -23,6 +23,4 @@ spring:
         enabled: true
         mode: polling
         period: 2000
-
-
 
