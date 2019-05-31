@@ -23,7 +23,7 @@ echo .
 kubectl apply -f ./k8s/deploy/namespace.yaml
 kubectl apply -f ./k8s/deploy/config-map.yaml
 kubectl apply -f ./k8s/deploy/role.yaml
-kubectl apply -f ./k8s/deploy/replica-set.yaml
+kubectl apply -f ./k8s/deploy/deployment.yaml
 kubectl apply -f ./k8s/deploy/svc.yaml
 
 popd

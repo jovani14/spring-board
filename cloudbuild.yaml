@@ -14,7 +14,7 @@ steps:
     args:
       - 'set'
       - 'image'
-      - 'rs/${_DEXCOM_PROJECT_ID}-rs'
+      - 'deployment/${_DEXCOM_PROJECT_ID}-dep'
       - 'spring-boot-container=gcr.io/$PROJECT_ID/${_DEXCOM_PROJECT_ID}:$REVISION_ID'
       - '--namespace=${_DEXCOM_NAMESPACE}'
     env:

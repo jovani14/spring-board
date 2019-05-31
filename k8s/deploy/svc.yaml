@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: spring-ajar-rs
+    app: spring-ajar-dep
   name: spring-ajar-svc
   namespace: germany
 spec:
@@ -11,6 +11,6 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: spring-ajar-rs
+    app: spring-ajar-dep
   sessionAffinity: None
   type: NodePort

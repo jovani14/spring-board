@@ -20,8 +20,8 @@ echo Deleting kubernetes objects
 echo .
 
 
-kubectl delete -f ./k8s/deploy/replica-set.yaml
 kubectl delete -f ./k8s/deploy/svc.yaml
+kubectl delete -f ./k8s/deploy/deployment.yaml
 kubectl delete -f ./k8s/deploy/config-map.yaml
 kubectl delete -f ./k8s/deploy/role.yaml
 kubectl delete -f ./k8s/deploy/namespace.yaml
