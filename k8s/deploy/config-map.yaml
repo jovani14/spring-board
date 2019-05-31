@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: spring-ajar
+  name: kafka-client
   namespace: germany
 data:
   application.properties: |-

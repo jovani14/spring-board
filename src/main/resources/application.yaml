@@ -18,7 +18,7 @@ spring:
         name: spring-ajar
         namespace: germany
         sources:
-          - name: spring-ajar
+          - name: kafka-client
       reload:
         enabled: true
         mode: polling
