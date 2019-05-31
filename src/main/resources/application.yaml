@@ -15,14 +15,15 @@ spring:
   cloud:
     kubernetes:
       config:
-        name: eu-kafka-config
+        name: spring-ajar
         namespace: germany
+        sources:
+          - name: spring-ajar
       reload:
         enabled: true
         mode: polling
         period: 2000
-
-#Actuator endpoints
+# Actuator endpoints
 endpoints:
   cors:
     allowed-origins: "*"
@@ -34,5 +35,4 @@ endpoints:
     enabled: true
   beans:
     enabled: true
-
 
