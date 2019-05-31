@@ -12,7 +12,6 @@ export BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." >/dev/null 2>&1 
 #echo .
 #echo "Bootstraping kubernetes project artifacts"
 #echo .
-
 export KUBE_NAMESPACE=germany
 export KUBE_CONFIG_NAME=eu-kafka-config
 export KUBE_APP_NAME=spring-ajar
