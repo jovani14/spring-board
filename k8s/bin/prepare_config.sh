@@ -15,7 +15,6 @@ export BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." >/dev/null 2>&1 
 
 export KUBE_NAMESPACE=germany
 export KUBE_APP_NAME=spring-ajar
-export KUBE_APP_CONFIG=kafka-client
 export KUBE_CLUSTER=kubernetes-p8-integrations-eu-dev-2
 export KUBE_REGION=europe-west3
 
@@ -54,7 +53,7 @@ spring:
         name: ${KUBE_APP_NAME}
         namespace: ${KUBE_NAMESPACE}
         sources:
-          - name: ${KUBE_APP_CONFIG}
+          - name: ${KUBE_APP_NAME}
       reload:
         enabled: true
         mode: polling

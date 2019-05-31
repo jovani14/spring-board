@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.reactive.result.view.RedirectView;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -23,8 +24,8 @@ public class HelloController {
         return Collections.singletonMap("response", "Hello " +name);
     }
     @GetMapping("/")
-    public String one() {
-        return "redirect:/static/index.html";
+    public RedirectView one() {
+        return  new RedirectView("/static/index.html");
     }
 
 

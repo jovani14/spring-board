@@ -8,6 +8,9 @@ management:
   endpoint:
     restart:
       enabled:  true
+  info:
+    git:
+      mode: full
 
 spring:
   application:
@@ -18,7 +21,7 @@ spring:
         name: spring-ajar
         namespace: germany
         sources:
-          - name: kafka-client
+          - name: spring-ajar
       reload:
         enabled: true
         mode: polling
