@@ -12,8 +12,8 @@ export BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." >/dev/null 2>&1 
 #echo .
 #echo "Bootstraping kubernetes project artifacts"
 #echo .
+
 export KUBE_NAMESPACE=germany
-export KUBE_CONFIG_NAME=eu-kafka-config
 export KUBE_APP_NAME=spring-ajar
 export KUBE_CLUSTER=kubernetes-p8-integrations-eu-dev-2
 export KUBE_REGION=europe-west3
@@ -50,14 +50,15 @@ spring:
   cloud:
     kubernetes:
       config:
-        name: ${KUBE_CONFIG_NAME}
+        name: ${KUBE_APP_NAME}
         namespace: ${KUBE_NAMESPACE}
+        sources:
+          - name: ${KUBE_APP_NAME}
       reload:
         enabled: true
         mode: polling
         period: 2000
-
-#Actuator endpoints
+# Actuator endpoints
 endpoints:
   cors:
     allowed-origins: "*"
@@ -69,7 +70,6 @@ endpoints:
     enabled: true
   beans:
     enabled: true
-
 
 EOF
 
