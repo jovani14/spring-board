@@ -60,7 +60,7 @@ spring:
 #Actuator endpoints
 endpoints:
   cors:
-    allowed-origins: *
+    allowed-origins: "*"
   metrics:
     enabled: true
   configprops:
