@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: spring-ajar-dep
-  name: spring-ajar-dep
-  namespace: germany
+    app: spring-test-dep
+  name: spring-test-dep
+  namespace: la
 spec:
   replicas: 2
   strategy:
@@ -14,14 +14,14 @@ spec:
       maxUnavailable: 25%
   selector:
     matchLabels:
-      app: spring-ajar-dep
+      app: spring-test-dep
   template:
     metadata:
       labels:
-        app: spring-ajar-dep
+        app: spring-test-dep
     spec:
       containers:
-        - image: gcr.io/p8-integrations-eu-dev-2/spring-ajar:latest
+        - image: gcr.io/p8-integrations-eu-dev-2/spring-test:latest
           imagePullPolicy: Always
           name: spring-boot-container
           ports:

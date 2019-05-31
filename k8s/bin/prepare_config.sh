@@ -1,7 +1,6 @@
 #!/bin/bash
 
 export BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." >/dev/null 2>&1 && pwd )"
-
 #project_config_file="project_config.yaml"
 #
 #if [ ! -f ${BASE_DIR}/${project_config_file} ]; then
@@ -13,10 +12,11 @@ export BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." >/dev/null 2>&1 
 #echo "Bootstraping kubernetes project artifacts"
 #echo .
 
-export KUBE_NAMESPACE=germany
-export KUBE_APP_NAME=spring-ajar
+export KUBE_NAMESPACE=la
+export KUBE_APP_NAME=spring-test
 export KUBE_CLUSTER=kubernetes-p8-integrations-eu-dev-2
-export KUBE_REGION=europe-west3
+export KUBE_REGION=europe-w
+est2
 
 export DOLLAR='$'
 pushd ${BASE_DIR}

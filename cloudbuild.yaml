@@ -1,6 +1,6 @@
 substitutions:
-  _DEXCOM_PROJECT_ID: spring-ajar
-  _DEXCOM_NAMESPACE: germany
+  _DEXCOM_PROJECT_ID: spring-test
+  _DEXCOM_NAMESPACE: la
 images:
   - "gcr.io/$PROJECT_ID/${_DEXCOM_PROJECT_ID}:$REVISION_ID"
 steps:
@@ -18,5 +18,5 @@ steps:
       - 'spring-boot-container=gcr.io/$PROJECT_ID/${_DEXCOM_PROJECT_ID}:$REVISION_ID'
       - '--namespace=${_DEXCOM_NAMESPACE}'
     env:
-      - 'CLOUDSDK_COMPUTE_ZONE=europe-west3'
+      - 'CLOUDSDK_COMPUTE_ZONE=europe-west2'
       - 'CLOUDSDK_CONTAINER_CLUSTER=kubernetes-p8-integrations-eu-dev-2'
