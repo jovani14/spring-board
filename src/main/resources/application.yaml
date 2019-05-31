@@ -15,7 +15,7 @@ spring:
   cloud:
     kubernetes:
       config:
-        name: spring-ajar
+        name: eu-apps
         namespace: germany
         sources:
           - name: spring-ajar

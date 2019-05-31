@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: ${KUBE_APP_NAME}
+  name: ${KUBE_CONFIG_GROUP}
   namespace: ${KUBE_NAMESPACE}
 data:
   application.properties: |-
-    myconfig.properties1=Sandra
-    myconfig.properties2=Sergi
+    myconfig.properties1=Donald
+    myconfig.properties2=Duck
   application.yaml: "kafka_cloud_config:\r\n    ssl.endpoint.identification.algorithm:
     https\r\n    sasl.mechanism: PLAIN\r\n    request.timeout.ms: 20000\r\n    bootstrap.servers:
     pkc-l5w5g.europe-west3.gcp.confluent.cloud:9092\r\n    retry.backoff.ms: 500\r\n
